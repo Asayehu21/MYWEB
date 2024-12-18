@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> contact me </title>
+
+	
+<style type="text/css">
+	#txt{
+		font-size: 25px;
+		
+	}
+	#txtf{
+	width: 250px;
+	height: 30px;
+	border-radius: 25px;
+	border: 1px solid green;
+	text-align:center;
+	border-color: rgb(15, 222, 77);
+	
+}
+#Etxt{
+	width: 250px;
+	height: 30px;
+	border-radius: 25px;
+	border: 1px solid green;
+	text-align:center;
+	border-color: rgb(15, 222, 77);
+	
+}
+.btn1{
+	height: 30px;
+	width: 200px;
+	font-size: 20px;
+	border-radius: 15px;
+	background: green;
+}
+#message1{
+	border-radius: 25px;
+	border: 1px solid green;
+	text-align:center;
+	border-color: rgb(15, 222, 77);
+	
+}
+</style>
+<script>
+	function formvalidation(){
+      var Name=document.getElementById("txtf");
+      var Email=document.getElementById("Etxt");
+	  var Message=document.getElementById("message1");
+      var txt=/^[A-Za-z]/;
+      var emm=/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/; 
+
+      var uuname=document.getElementById("uname");
+      var emmail=document.getElementById("email");
+	  var mmessage=document.getElementById("mess");
+      
+      var message = "";
+
+      if(Name.value == "")
+      {
+       message=" write your name";
+    uuname.innerHTML=message;
+    Name.setAttribute("style","border-color:red");
+        return false;
+      }
+
+      if(Name.value.length < 6)
+      {
+        message=" your name is weak";
+    uuname.innerHTML=message;
+    Name.setAttribute("style","border-color:yellow");
+        return false
+      }
+
+      if (!(Name.value.match(txt)))
+       {
+         message=" your name must be letters only";
+       uuname.innerHTML=message;
+       Name.setAttribute("style","border-color:green");
+        return false;
+      }
+
+	  if(Email.value == "")
+      {
+       message=" Write Your E-mail";
+	   emmail.innerHTML=message;
+	   Email.setAttribute("style","border-color:red");
+        return false;
+      }
+
+      if (!(Email.value.match(emm)))
+       {
+         message=" your email is not valid";
+		 emmail.innerHTML=message;
+       Email.setAttribute("style","border-color:green");
+        return false;
+      }
+
+
+	  if(Message.value == "")
+      {
+       message=" Write Your Message";
+	   mmessage.innerHTML=message;
+    Message.setAttribute("style","border-color:red");
+        return false;
+      }
+
+      if (!(Message.value.match(txt)))
+       {
+         message=" your message must be letters only";
+		 mmessage.innerHTML=message;
+       Message.setAttribute("style","border-color:green");
+        return false;
+      }
+	}
+	
+	
+</script>
+
+</head>
+<body>
+
+
+<form target="myfrm" action="contact.php" method="post">
+	<h1>Contact Me</h1>
+	<p id="txt"><strong>Phone:</strong></p>
+	
+	<p id="txt">+251925031157 <br><br>
++251909666440<p><br>
+				
+					<label for="name" id="txt"> Name:</label>
+
+					<input type="text" id="txtf" name="C_name" placeholder="Write Your Full Name......"><span id="uname" style="color: red; font-size: 26px;"></span><br><br>
+
+					<label for="email"  id="txt">Email:</label>
+					<input type="email" id="Etxt" name="C_email"  placeholder=" Write Your E-mail....."><span id="email" style="color: red; font-size: 26px;"></span><br><br><br>
+
+					<label for="message"  id="txt">Message:</label><br><br>
+					<textarea id="message1" name="C_message" cols="60" rows="10"  placeholder=" Write Your Message..."></textarea><br><span id="mess" style="color: red; font-size: 26px;"></span><br><br><br>
+
+				<button type="submit" class="btn1" name="C_submit" onclick="return formvalidation(); ">Send Message</button>
+			</form>
+			</body>
+</html>

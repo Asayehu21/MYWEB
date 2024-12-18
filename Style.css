@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+	background: #2d5353;
+
+}
+
+.header{
+	width: 100%;
+	background: #003b63;
+	color: white;
+	text-align: center;
+	background-size: 90px;
+	height: 200px;
+	line-height:110px;
+	font-size: 25px;
+	border: solid 1px black;
+	border-radius: 15px;
+	 -webkit-transition: width 3s; /* For Safari 3.1 to 6.0 */
+  transition: width 1s;
+}
+.header:hover{
+	opacity: 0.5;
+  filter: alpha(opacity=50); 
+  background: blue;
+  
+
+
+}
+nav{
+	margin-top: 0px;
+
+}
+nav a:hover{
+	opacity: 0.6;
+  filter: alpha(opacity=50); 
+    background: #ddd;
+    color: #333;
+	margin-right: 5px;
+	padding: 20px;	
+}
+
+nav ul{
+	background: #065f47;
+	list-style-type: none;
+	font-size: 30px;
+	float: left;
+	width: 20%;
+	height: 1400px;
+	padding: 70px;
+	border: solid 1px black;
+	border-radius: 15px;
+	
+}
+nav ul li{
+	color: #73f7f9;
+	
+	padding: 40px;
+	font-size: 25px;
+    margin-top: 10px;
+    
+}
+nav ul li a{
+	text-decoration: none;
+	color: white;
+}
+nav ul li a:hover{
+	color: black;
+	text-decoration: none;
+}
+img{
+	border-radius: 50%;
+}
+#my{
+	color: black;
+	font-size: 45px;
+	margin-left: 40px;
+	margin-top: 50px;
+	
+}
+#art{
+	
+	padding: 5px;
+	width: 79%;
+	float: right;
+	height: 1400px;
+	background: #a6a6a6;
+	font-size: 25px;
+	margin-top: 30px;
+	border: solid 1px black;
+	border-radius: 15px;
+	
+}
+	#art:hover{
+		opacity: 0.7;
+  filter: alpha(opacity=70); 
+
+}
+#mg{
+	margin-left: 200px;
+	margin-top: 0px;
+	padding: 10px;
+	
+}
+#nm{
+	margin-left: 200px;
+}
+#hnm{
+	margin-left: 300px;
+}
+#nnm{
+	margin-left: 100px;
+
+}
+#ftr{
+	width: 100%;
+	font-size: 35px;
+	height: 150px;
+	line-height: 80px;
+	color: white;
+	clear: both;
+	text-align: center;
+	background: #24752d;
+	border: solid 1px black;
+	border-radius: 15px;
+	
+}
+#txtf{
+	width: 50px;
+	height: 25px;
+	border-radius: 25px;
+	color: red;
+
+}
+#fff{
+	color: lightyellow;
+	text-decoration: none;
+}
+#ftr:hover{
+	opacity: 0.7;
+  filter: alpha(opacity=50); 
+
+}
+@media all and (max-width: 550px){
+.main{
+	padding: 5em 0 5em 0;
+
+}
+.art{
+	padding: 5em 0 5em 0;
+}
+
+}

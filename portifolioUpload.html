@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Upload </title>
+
+  <style type="text/css">
+    #ptt{
+      font-size: 25px;
+    }
+    
+    #pt{
+      width: 250px;
+      height: 30px;
+      border-radius: 15px;
+      font-size:20px;
+      text-align:center;
+      border: 1px solid green;
+      border-color: rgb(15, 222, 77);
+    }
+
+    #pbtn{
+      width: 100px;
+      height: 32px;
+      background: green;
+      font-size: 20px;
+      border-radius: 15px;
+    }
+
+    #descript{
+	border-radius: 25px;
+	border: 1px solid green;
+  text-align:center;
+  border-color: rgb(15, 222, 77);
+}
+button{
+      width: 100px;
+      height: 32px;
+      background: aqua;
+      font-size: 30px;
+      border-radius: 15px;
+      color: black;
+
+}
+
+  </style>
+  <script>
+    function formvalidation(){
+      var Title=document.getElementById("pt");
+      var File=document.getElementById("file");
+	    var Descriptn=document.getElementById("descript")
+      var txt=/^[A-Za-z]/;
+      
+
+      var title=document.getElementById("uname");
+      var ffile=document.getElementById("tfile");
+      var desc=document.getElementById("des");
+	  
+      
+      var message = "";
+
+      if(Title.value == "")
+      {
+       message=" write your title";
+       title.innerHTML=message;
+       Title.setAttribute("style","border-color:red");
+        return false;
+      }
+
+      if (!(Title.value.match(txt)))
+       {
+         message=" your title must be letters only";
+         title.innerHTML=message;
+         Title.setAttribute("style","border-color:green");
+        return false;
+      }
+      if(File.value == "")
+      {
+       message=" enter your file";
+       ffile.innerHTML=message;
+       File.setAttribute("style","border-color:red");
+        return false;
+      }
+
+      if(Descriptn.value == "")
+      {
+       message=" write your description";
+       desc.innerHTML=message;
+       Descriptn.setAttribute("style","border-color:red");
+        return false;
+      }
+
+      if (!(Descriptn.value.match(txt)))
+       {
+         message=" your description must be letters only";
+         desc.innerHTML=message;
+         Descriptn.setAttribute("style","border-color:green");
+        return fals
+    }
+  }
+  </script>
+</head>
+<body>
+  <h1> My Project</h1>
+  <form action="PortifolioUpload.php" method="post" enctype="multipart/form-data">
+    <label for="name" id="ptt">Project Title</label>
+    <input type="text" id="pt" name="proj_title" ><span id="uname" style="color: red; font-size: 26px;"></span><br><br>
+    
+    <input type="file" id="file" name="proj_file" ><span id="tfile" style="color: red; font-size: 26px;"></span><br><br>
+
+    <label for="description" id="ptt">Description:</label><br><br>
+    <textarea id="descript" name="description" rows="6" cols="50" ></textarea><br><span id="des" style="color: red; font-size: 26px;"></span><br><br>
+
+    <input type="submit" id="pbtn" value="Upload" name="proj_Upload" onclick="return formvalidation();"><br><br>
+
+
+    <button ><a href ="PortifolioView.php"> View</a> </button>
+  </form>
+</body>
+</html>

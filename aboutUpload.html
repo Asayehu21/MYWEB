@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>about Upload </title>
+
+  <style type="text/css">
+    #Ttt{
+      font-size: 25px;
+    }
+    #pt{
+      width: 250px;
+      height: 25px;
+      border-radius: 15px;
+    }
+    #tbtn{
+ 
+      width: 100px;
+      height: 32px;
+      background: green;
+      font-size: 20px;
+      border-radius: 15px;
+      border-color: rgb(15, 222, 77);
+ 
+}
+button{
+      width: 100px;
+      height: 32px;
+      background: aqua;
+      font-size: 30px;
+      border-radius: 15px;
+      color: black;
+
+}
+#tbox{
+            height:30px;
+            width: 250px;
+            border-color:green;
+            border-radius:25px;
+            color:black;
+            font-size:20px;
+            text-align:center;
+
+    }
+  </style>
+  <script>
+    function formvalidation(){
+      var Title=document.getElementById("tbox");
+      var File=document.getElementById("file");
+	  
+      var txt=/^[A-Za-z]/;
+      
+
+      var title=document.getElementById("uname");
+      var ffile=document.getElementById("tfile");
+	  
+      
+      var message = "";
+
+      if(Title.value == "")
+      {
+       message=" write your title";
+       title.innerHTML=message;
+       Title.setAttribute("style","border-color:red");
+        return false;
+      }
+
+      if (!(Title.value.match(txt)))
+       {
+         message=" your title must be letters only";
+         title.innerHTML=message;
+         Title.setAttribute("style","border-color:green");
+        return false;
+      }
+      if(File.value == "")
+      {
+       message=" enter your file";
+       ffile.innerHTML=message;
+       File.setAttribute("style","border-color:red");
+        return false;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>About Me</h1>
+        
+  <form action="AboutUpload.php" method="post" enctype="multipart/form-data">
+
+    <input type="text" id="tbox" name="a_title" ><span id="uname" style="color: red; font-size: 26px;"></span><br><br>
+    
+    <input type="file" id="file" name="a_file"> <span id="tfile" style="color: red; font-size: 26px;"></span><br><br>
+
+    <input type="submit" id="tbtn" value="Upload" name="upload" onclick="return formvalidation();"><br><br>
+
+    <button ><a href ="AboutView.php"> View</a> </button>
+  </form>
+</body>
+</html>
